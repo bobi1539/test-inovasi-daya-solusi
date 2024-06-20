@@ -10,4 +10,6 @@ public final class Endpoint {
 
     public static final String BASE_ENDPOINT = "/api";
     public static final String TRANSACTION = BASE_ENDPOINT + "/transactions";
+    public static final String CUSTOMER = BASE_ENDPOINT + "/customers";
+    public static final String PRODUCT = BASE_ENDPOINT + "/products";
 }

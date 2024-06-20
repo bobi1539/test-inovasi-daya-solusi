@@ -1,21 +1,24 @@
 package test.inovasi.daya.solusi.controller;
 
+import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import test.inovasi.daya.solusi.constant.Endpoint;
+import test.inovasi.daya.solusi.dto.response.TransactionResponse;
+import test.inovasi.daya.solusi.service.TransactionService;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.List;
 
 @RestController
 @RequestMapping(Endpoint.TRANSACTION)
+@AllArgsConstructor
 public class TransactionController {
 
+    private final TransactionService transactionService;
+
     @GetMapping
-    public Map<String, String> test() {
-        Map<String, String> map = new HashMap<>();
-        map.put("Hello", "Dunia");
-        return map;
+    public List<TransactionResponse> list() {
+        return transactionService.list();
     }
 }

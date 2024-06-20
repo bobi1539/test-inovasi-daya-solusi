@@ -9,4 +9,6 @@ public final class Constant {
     }
 
     public static final String ERROR = "Error : ";
+    public static final String PRODUCT_NAME_REQUIRED = "PRODUCT NAME IS REQUIRED";
+    public static final String CUSTOMER_NAME_REQUIRED = "CUSTOMER NAME IS REQUIRED";
 }
