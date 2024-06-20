@@ -1,10 +1,10 @@
 package test.inovasi.daya.solusi.controller;
 
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import test.inovasi.daya.solusi.constant.Endpoint;
+import test.inovasi.daya.solusi.dto.request.TransactionRequest;
 import test.inovasi.daya.solusi.dto.response.TransactionResponse;
 import test.inovasi.daya.solusi.service.TransactionService;
 
@@ -20,5 +20,12 @@ public class TransactionController {
     @GetMapping
     public List<TransactionResponse> list() {
         return transactionService.list();
+    }
+
+    @PostMapping
+    public TransactionResponse create(
+            @RequestBody @Valid TransactionRequest request
+    ) {
+        return transactionService.create(request);
     }
 }
